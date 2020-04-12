@@ -6,5 +6,7 @@ services:
       context: ./app
     volumes:
       - ./app:/usr/src/app
+    ports:
+      - "5000:5000"
     env_file:
       - ./.env
