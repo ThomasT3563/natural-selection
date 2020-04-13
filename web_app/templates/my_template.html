@@ -5,7 +5,7 @@
     </head>
     
     <body>
-        <u><h1>Natural Selection Simulation</h1></u>
+        <u><h2>Natural Selection Simulation</h2></u>
 
         <u><h3>Change values</h3></u>
 
@@ -44,6 +44,14 @@
         var interval
         
         $("#start").click(function(){
+            
+            // initialisation simulation
+            $.post("/simulation/init",function(data){
+                console.log("initialisation simulation");
+                $("#display").attr("src",data);
+            })
+
+            // iteration simulation
             interval = setInterval(function(){
                 $.get("/simulation",function(data){
                     console.log("données chargée: "+data);
@@ -52,6 +60,7 @@
             },1000);
         })
 
+        // stop simulation
         $("#stop").click(function(){
             console.log("on a appuyé sur un bouton stop");
             clearInterval(interval);

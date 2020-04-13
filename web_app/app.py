@@ -1,8 +1,10 @@
+from __future__ import print_function
+# use :print("Hello world", file=sys.stderr)
+import sys
 import os
 import time
 
-from flask import Flask, request, render_template, redirect
-from wtforms import TextField, Form, SubmitField
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -11,7 +13,6 @@ def main():
     
     global variable_1
     global variable_2
-    global simulation_running
     
     if request.method == 'GET':
         variable_1 = request.args.get('variable_1', variable_1)
@@ -20,15 +21,31 @@ def main():
     return render_template("my_template.html",
                            var1=variable_1,
                            var2=variable_2)
+
+@app.route('/simulation/init',methods=['POST'])
+def simulation_init():
+    print("Initialisation of simulation object", file=sys.stderr)
     
+    # INITIALISATION
+    simulation = None
+    
+    try:
+        image = "static/image_example.jpg"
+        return image
+    except Exception as e:
+        return e 
+    
+
 @app.route('/simulation',methods=['GET'])
-def get_simulation_next_step():
+def simulation_next_step():
+    
+    global simulation
     
     # COMPUTATION
     # IMAGE GENERATION
     
     try:
-        image = "static/image_example.jpg" # url
+        image = "static/image_example.jpg"
         return image
     except Exception as e:
         return e
