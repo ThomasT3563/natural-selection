@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NaturalSelection</title>
+    </head>
+    
+    <body>
+        <u><h1>Natural Selection Simulation</h1></u>
+
+        <u><h3>Change values</h3></u>
+
+        <form method="GET">
+            Variable 1 = 
+            <input name="variable_1" value={{ var1 }}>
+        </form>
+        
+        <form method="GET">
+            Variable 2 = 
+            <input name="variable_2" value={{ var2 }}>
+        </form>
+
+        <br />
+
+        <!-- Bouton start & stop simulation -->
+        <u><h3>Running Simulation :</h3></u>
+        <button id="start">
+            Start simulation
+        </button>
+        <br />
+        <button id="stop">
+            Stop simulation
+        </button>
+     
+        <br />
+        <br />
+        
+        <!-- Display image simulation -->
+        <img src="" id="display" alt="Simulation not started">
+
+    </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var interval
+        
+        $("#start").click(function(){
+            interval = setInterval(function(){
+                $.get("/simulation",function(data){
+                    console.log("données chargée: "+data);
+                    $("#display").attr("src",data);
+                })
+            },1000);
+        })
+
+        $("#stop").click(function(){
+            console.log("on a appuyé sur un bouton stop");
+            clearInterval(interval);
+        })
+    </script>
+    
+</html>

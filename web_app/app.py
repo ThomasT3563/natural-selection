@@ -7,40 +7,33 @@ from wtforms import TextField, Form, SubmitField
 app = Flask(__name__)
 
 @app.route('/',methods=['GET'])
-def variable_def(): 
+def main(): 
     
     global variable_1
     global variable_2
+    global simulation_running
     
     if request.method == 'GET':
         variable_1 = request.args.get('variable_1', variable_1)
         variable_2 = request.args.get('variable_2', variable_2)
-    
-    return render_template("template.html",
+        
+    return render_template("my_template.html",
                            var1=variable_1,
                            var2=variable_2)
-     
-@app.route('/simulation')
-def simulation():
-    """
-    if request.method == 'POST':
-        if 'start_stop_button' in request.form:
-            simulation_running = not simulation_running
-        
-    if simulation_running:
-        # generate new png (from simulation code)
-        time.sleep(1)
-        return render_template("template.html", 
-                               var1=variable_1,
-                               var2=variable_2, 
-                               image="static/image_example.jpg")
-    else:
-        return render_template("template.html",
-                               var1=variable_1,
-                               var2=variable_2)
-    """
-    return "SIMULATION"
     
+@app.route('/simulation',methods=['GET'])
+def get_simulation_next_step():
+    
+    # COMPUTATION
+    # IMAGE GENERATION
+    
+    try:
+        image = "static/image_example.jpg" # url
+        return image
+    except Exception as e:
+        return e
+    
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     
