@@ -2,10 +2,11 @@ version: '3.7'
 
 services:
   app:
+    container_name: natural_selection
     build:
-      context: ./app
+      context: ./web_app
     volumes:
-      - ./app:/usr/src/app
+      - ./web_app:/usr/src/web_app
     ports:
       - "5000:5000"
     env_file:
