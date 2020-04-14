@@ -50,6 +50,14 @@ def simulation_next_step():
     except Exception as e:
         return e
     
+@app.route('/simulation/delete',methods=['DELETE'])
+def simulation_delete():
+    print("Delete simulation object and files generated", file=sys.stderr)
+    try:
+        # DELETE PNG FILES
+        return None
+    except Exception as e:
+        return e
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
