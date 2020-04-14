@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  web:
+    build:
+      context: ./web_app/
+      dockerfile: lint.Dockerfile
+    volumes:
+      - ./web_app/:/usr/src/web_app/

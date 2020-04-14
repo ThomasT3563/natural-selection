@@ -2,6 +2,11 @@
 
 ### WIP
 
+Projet to run simple simulation of natural selection\
+Flask web application\
+Docker\
+Python code
+
 ### Install docker
 Follow the instructions here to install docker-ce https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
@@ -23,9 +28,10 @@ After, run these commands so you do not need to use sudo to run docker
 ```
 You can access the web app at: http://localhost:5000/
 
-### Tech
+### Lint Code with Flake8
+The flake8 linter can be run to lint the python code and enforce code quality rules (PEP8).
 
-Projet to run simple simulation of natural selection\
-Flask web application\
-Docker\
-Python code
+```bash
+> docker-compose -f docker-compose.lint.yml up --build
+```
+

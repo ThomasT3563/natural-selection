@@ -9,3 +9,4 @@ COPY . .
 
 # run script
 CMD [ "python", "app.py"]
+
