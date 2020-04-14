@@ -1,6 +1,4 @@
 from __future__ import print_function
-print("Hello world", file=sys.stderr)
-
 import sys
 import os
 import time
