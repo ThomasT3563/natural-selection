@@ -5,7 +5,7 @@ import os
 
 from src.display_tools import display_demographie
 from src.population import population
-from src.individus import individus
+# from src.individus import individus
 from src.especes import espece_herbivore, espece_plante, espece_carnivore
 
 
@@ -29,6 +29,7 @@ class Simulation(object):
         self.herbivores = population(nombre_individus=10, map_size = self.map_size, espece = espece_herbivore)
         self.plantes = population(nombre_individus = 10, map_size = self.map_size, espece = espece_plante)
         self.carnivores = population(nombre_individus = 5, map_size = self.map_size, espece = espece_carnivore)
+        
 
     def next_iteration(self):
         # random generation

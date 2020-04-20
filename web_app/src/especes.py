@@ -3,7 +3,7 @@
 import numpy as np
 import random
 
-from individus import individus
+from src.individus import individus
 
 class espece_herbivore(individus):
     def __init__(self,map_size,initial_coordinates=None):

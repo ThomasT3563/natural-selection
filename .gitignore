@@ -1,6 +1,9 @@
-#dossier de dev et tests
+# dossier de dev et tests
 gifs/
 dev/
+
+# dossier où sont stockées les images de simulation
+web_app/static/display_simulation/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
