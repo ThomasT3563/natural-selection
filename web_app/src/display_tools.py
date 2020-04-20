@@ -42,10 +42,34 @@ def update_writer(writer,graph_h,graph_p,graph_c,herbivores,plantes,carnivores):
     
     writer.grab_frame()
 
+    
+def display(herbivores, carnivores, plante s,filename):
+
+    fig = plt.figure(figsize=(8,8))
+    
+    ax = fig.gca()
+    ax.set_xticks(np.arange(0, map_size[0]+1, 1))
+    ax.set_yticks(np.arange(0, map_size[1]+1, 1))
+    plt.grid()
+    
+    plt.xlim(0, map_size[0])
+    plt.ylim(0, map_size[1])
+    
+    hX, hY = herbivores.get_coords()
+    cX, cY = carnivores.get_coords()
+    pX, pY = plantes.get_coords()
+
+    plt.plot(cX, cY,color='firebrick',marker="o",linestyle="",markersize=20)
+    plt.plot(hX, hY,color='dodgerblue',marker="o",linestyle="",markersize=20)
+    plt.plot(pX, pY,color='green',marker="D",linestyle="",markersize=10)
+    
+    try:
+        plt.savefig(filename, dpi=70)
+        plt.close()
+    except Exception as e:
+        print(e, file=sys.stderr)
 
 def display_demographie(herbivores, carnivores, plantes,filename):
-
-    import sys
     
     fig = plt.figure(figsize=(10, 6))
     host = fig.add_subplot(111)

@@ -28,7 +28,7 @@
         </button>
         <br />
         <button id="stop">
-            Stop simulation
+            Stop simulation 
         </button>
      
         <br />
@@ -36,6 +36,11 @@
         
         <!-- Display image simulation -->
         <img src="" id="display" alt="Simulation not started">
+        
+        <br />
+        
+        <!-- Display the demographic evolution of the simulation -->
+        <img src="" id="demographic" alt="Simulation not started">
 
     </body>
     
@@ -46,16 +51,22 @@
         $("#start").click(function(){
             
             // initialisation simulation
+            // WIP : faire un GET pour récuperer les 2 paths d'image
             $.post("/simulation/init",function(data){
                 console.log("initialisation simulation");
-                $("#display").attr("src",data);
+                var tab_data = JSON.parse(data);
+                $("#display").attr("src",tab_data[0]);
+                $("#demographic").attr("src",tab_data[1]);
             })
 
             // iteration simulation
             interval = setInterval(function(){
+                // WIP : faire un GET pour récuperer les 2 paths d'image
                 $.get("/simulation",function(data){
                     console.log("données chargée: "+data);
-                    $("#display").attr("src",data);
+                    var tab_data = JSON.parse(data);
+                    $("#display").attr("src",tab_data[0]);
+                    $("#demographic").attr("src",tab_data[1]);
                 })
             },1000);
         })

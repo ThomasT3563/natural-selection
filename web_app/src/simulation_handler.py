@@ -3,7 +3,7 @@ import random
 import sys
 import os
 
-from src.display_tools import display_demographie
+from src.display_tools import display, display_demographie
 from src.population import population
 # from src.individus import individus
 from src.especes import espece_herbivore, espece_plante, espece_carnivore
@@ -22,7 +22,7 @@ class Simulation(object):
     def __init__(self, map_size):
         self.map_size = map_size
         self.n_iter = 0
-        self.n_iter_max = 10 #5000
+        self.n_iter_max = 10 #5000 
         self.list_pictures = []
         
         # population objects initialisation
@@ -65,8 +65,18 @@ class Simulation(object):
         pass
     
     def display(self,filename=None):
+        # WIP : to change
+        print("function display called", file=sys.stderr)
         if filename is None:
-            filename = f'./simulation_pict_{random.randint(0,1e5)}.jpg'
+            filename = f'./simulation_pict_{random.randint(0,1e5)}.png'
+        display(self.herbivores, self.carnivores, self.plantes,filename)
+        self.list_pictures.append(filename)
+        return filename
+    
+    def display_demographic(self,filename=None):
+        print("function display_demographic called", file=sys.stderr)
+        if filename is None:
+            filename = f'./simulation_pict_{random.randint(0,1e5)}.png'
         display_demographie(self.herbivores, self.carnivores, self.plantes,filename)
         self.list_pictures.append(filename)
         return filename
