@@ -16,3 +16,4 @@ instance/
 
 #Jupyter notebooks
 .ipynb_checkpoints
+*.ipynb

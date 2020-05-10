@@ -3,7 +3,7 @@ import random
 import sys
 import os
 
-from src.display_tools import display, display_demographie
+from src.display_tools import png_display, png_display_demographie
 from src.population import population
 # from src.individus import individus
 from src.especes import espece_herbivore, espece_plante, espece_carnivore
@@ -61,7 +61,7 @@ class Simulation(object):
             raise SimulationError("Not enough entities")
     
     def delete(self):
-        #WIP delete all pictures in self.list_pictures
+        """WIP delete all pictures in self.list_pictures."""
         pass
     
     def display(self,filename=None):
@@ -69,7 +69,7 @@ class Simulation(object):
         print("function display called", file=sys.stderr)
         if filename is None:
             filename = f'./simulation_pict_{random.randint(0,1e5)}.png'
-        display(self.herbivores, self.carnivores, self.plantes,filename)
+        png_display(self.herbivores, self.carnivores, self.plantes,filename, self.map_size)
         self.list_pictures.append(filename)
         return filename
     
@@ -77,7 +77,7 @@ class Simulation(object):
         print("function display_demographic called", file=sys.stderr)
         if filename is None:
             filename = f'./simulation_pict_{random.randint(0,1e5)}.png'
-        display_demographie(self.herbivores, self.carnivores, self.plantes,filename)
+        png_display_demographie(self.herbivores, self.carnivores, self.plantes,filename)
         self.list_pictures.append(filename)
         return filename
     

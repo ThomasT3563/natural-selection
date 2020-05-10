@@ -43,7 +43,7 @@ def update_writer(writer,graph_h,graph_p,graph_c,herbivores,plantes,carnivores):
     writer.grab_frame()
 
     
-def display(herbivores, carnivores, plante s,filename):
+def png_display(herbivores, carnivores, plantes, filename, map_size):
 
     fig = plt.figure(figsize=(8,8))
     
@@ -69,7 +69,7 @@ def display(herbivores, carnivores, plante s,filename):
     except Exception as e:
         print(e, file=sys.stderr)
 
-def display_demographie(herbivores, carnivores, plantes,filename):
+def png_display_demographie(herbivores, carnivores, plantes,filename):
     
     fig = plt.figure(figsize=(10, 6))
     host = fig.add_subplot(111)

@@ -7,6 +7,12 @@ Flask web application\
 Docker\
 Python code
 
+### TODO
+- Graphical redesign using Bootstrap
+- Renaming and translation
+- Adding variable modification on web page
+- Start fun stuff and add new features on the simulation
+
 ### Install docker
 Follow the instructions here to install docker-ce https://docs.docker.com/install/linux/docker-ce/ubuntu/
 

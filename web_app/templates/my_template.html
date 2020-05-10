@@ -51,7 +51,6 @@
         $("#start").click(function(){
             
             // initialisation simulation
-            // WIP : faire un GET pour récuperer les 2 paths d'image
             $.post("/simulation/init",function(data){
                 console.log("initialisation simulation");
                 var tab_data = JSON.parse(data);
@@ -61,14 +60,13 @@
 
             // iteration simulation
             interval = setInterval(function(){
-                // WIP : faire un GET pour récuperer les 2 paths d'image
                 $.get("/simulation",function(data){
                     console.log("données chargée: "+data);
                     var tab_data = JSON.parse(data);
                     $("#display").attr("src",tab_data[0]);
                     $("#demographic").attr("src",tab_data[1]);
                 })
-            },1000);
+            },2000);
         })
 
         // stop simulation
