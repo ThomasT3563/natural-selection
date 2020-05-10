@@ -2,8 +2,13 @@
 
 ### WIP
 
-This project is a simple simulation of natural selection. This is a Python flask application that run in a docker container. This project is for me a way to understand a little better how the web dev works as I currently don't know Javascript, Boostrap or html. Therefore don't judge the code too harshly.\
+This project is a simple simulation of natural selection. This is a Python flask application that runs in a docker container. This project is for me a way to understand a little better how the web dev works as I currently don't know Javascript, Boostrap or html. Therefore don't judge the code too harshly.\
 However if you have any advice or feedback feel free to contact me.\
+
+### How it looks
+<p align="center">
+<img style="display: block; margin: auto;" alt="photo" src="./screenshot_app.PNG">
+</p>
 
 ### TODO
 - Graphical redesign using Bootstrap
