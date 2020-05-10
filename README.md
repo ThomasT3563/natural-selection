@@ -17,6 +17,8 @@ However if you have any advice or feedback feel free to contact me.
 - Adding variable modification on web page
 - Start fun stuff and add new features on the simulation
 
+## How to set up the application
+
 ### Install docker
 Follow the instructions here to install docker-ce https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
@@ -32,13 +34,16 @@ After, run these commands so you do not need to use sudo to run docker
 > sudo chmod +x /usr/local/bin/docker-compose
 ```
 
+### Get the code
+Clone the repository.
+
 ### Start the application
 ```bash
 > docker-compose up --build
 ```
 You can access the web app at: http://localhost:5000/
 
-### Lint Code with Flake8
+### (dev) Lint Code with Flake8
 The flake8 linter can be run to lint the python code and enforce code quality rules (PEP8).
 
 ```bash
