@@ -1,47 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
         <title>NaturalSelection</title>
     </head>
     
     <body>
-        <u><h2>Natural Selection Simulation</h2></u>
+        <!-- top navigation bar -->
+        <header>
+          <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-7 py-4">
+                  <h4 class="text-white">About</h4>
+                  <p class="text-muted">This project is a simple simulation of natural selection. This is a Python flask application that runs in a docker container. This project is for me a way to understand a little better how the web dev works as I currently don't know Javascript, Boostrap or html. Therefore don't judge the code too harshly. However if you have any advice or feedback feel free to contact me.</p>
+                </div>
+                <div class="col-md-3 py-4">
+                  <h4 class="text-white">Contact</h4>
+                  <ul class="list-unstyled">
+                    <li><a href="https://github.com/ThomasT3563" class="text-white">my GitHub: ThomasT3563</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+              <a href="" class="navbar-brand d-flex align-items-center">
+                <strong>Natural selection simulation</strong>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </div>
+        </header>
 
-        <u><h3>Change values</h3></u>
+        <!-- Central part -->
+        <div class="row">
 
-        <form method="GET">
-            Variable 1 = 
-            <input name="variable_1" value={{ var1 }}>
-        </form>
-        
-        <form method="POST">
-            Variable 2 = 
-            <input name="variable_2" value={{ var2 }}>
-        </form>
+            <!-- Left row, changing value of parameters -->
+            <nav class="col-md-2 bg-light sidebar px-4">
+                <div class="sidebar-sticky">
 
-        <br />
+                    <!-- Customization of values for simulation -->
+                    <u><h3>Change values</h3></u>
+                    <form method="GET">
+                        Variable 1 = 
+                        <input name="variable_1" value={{ var1 }}>
+                    </form>
+                    <form method="GET">
+                        Variable 2 = 
+                        <input name="variable_2" value={{ var2 }}>
+                    </form><br />
 
-        <!-- Bouton start & stop simulation -->
-        <u><h3>Running Simulation :</h3></u>
-        <button id="start">
-            Start simulation
-        </button>
-        <br />
-        <button id="stop">
-            Stop simulation 
-        </button>
-     
-        <br />
-        <br />
-        
-        <!-- Display image simulation -->
-        <img src="" id="display" alt="Simulation not started">
-        
-        <br />
-        
-        <!-- Display the demographic evolution of the simulation -->
-        <img src="" id="demographic" alt="Simulation not started">
+                </div>
+            </nav>
 
+            <!-- Display image simulation -->
+            <div class="col-md-5 px-4">
+                <img  class="img-responsive" src="" id="display" style="height:100%">
+            </div>
+
+            <div class="col-md-5 px-4">
+
+                <u><h3>Running Simulation :</h3></u>
+
+                <!-- Bouton start & stop simulation -->
+                <p><a class="btn btn-primary btn-lg" id="start" role="button">START</a></p>
+                <p><a class="btn btn-primary btn-lg" id="stop" role="button">STOP </a></p>
+
+                <!-- Display the demographic evolution of the simulation -->
+                <img  class="img-responsive" src="" id="demographic" style="width:100%">
+
+            </div>
+
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
